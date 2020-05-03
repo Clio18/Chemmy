@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Taco Cloud</title>
+    <link rel="stylesheet" th:href="@{/styles.css}"/>
+</head>
+<body>
+<h1>Design your taco!</h1>
+<form th:object="${element}">
+    <div>
+        <div>
+            <h3>Designate your wrap:</h3>
+            <div th:each="element : ${elements}">
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Symbol</th>
+                        <th>Origin</th>
+                        <th>Number</th>
+                        <th>Atomic Mass</th>
+                        <th>Density</th>
+                        <th>Melting</th>
+                        <th>Bolling</th>
+                        <th>Year</th>
+                        <th>Discoverer</th>
+                    </tr>
+                    <tr>
+                        <td><span th:text="${element.name_el}"></span></td>
+                        <td><span th:text="${element.symbol_el}"></span></td>
+                        <td><span th:text="${element.origin_el}"></span></td>
+                        <td><span th:text="${element.number_el}"></span></td>
+                        <td><span th:text="${element.atomic_mas}"></span></td>
+                        <td><span th:text="${element.density_el}"></span></td>
+                        <td><span th:text="${element.bolling_el}"></span></td>
+                        <td><span th:text="${element.year_el}"></span></td>
+                        <td><span th:text="${element.discover_el}"></span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <button>Submit your taco</button>
+    </div>
+</form>
+</body>
+</html>
